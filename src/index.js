@@ -7,8 +7,11 @@ function render() {
   element.innerHTML = `<h1>Weather App</h1>`;
   element.classList.add('test');
 
-  btn.innerHTML = 'Click me';
+  let input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  btn.innerHTML = 'console log weather';
   btn.onclick = weatherData;
+  element.appendChild(input);
   element.appendChild(btn);
   return element;
 }
