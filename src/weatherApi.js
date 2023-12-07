@@ -7,4 +7,16 @@ export default async function getWeatherData() {
   );
   const data = await response.json();
   console.log(data);
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <div>
+    <p>${data.current.condition['text']}</p>
+    <p>${data.location.name}, ${data.location.region}</p>
+    <h1>${data.current.temp_c} C</h1>
+    <h2>Feels Like: ${data.current.feelslike_c} C</h2>
+    <h2>Humidity: ${data.current.humidity} %</h2>
+    <h2>Wind: ${data.current.wind_mph} mph</h2>
+    <div>
+  `;
+  document.body.appendChild(div);
 }
