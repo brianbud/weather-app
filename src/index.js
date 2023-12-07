@@ -9,7 +9,7 @@ function render() {
 
   let input = document.createElement('input');
   input.setAttribute('type', 'text');
-  btn.innerHTML = 'console log weather';
+  btn.innerHTML = 'search city';
   btn.onclick = weatherData;
   div.appendChild(input);
   div.appendChild(btn);
