@@ -3,6 +3,8 @@ import weatherData from './weatherApi.js';
 
 function render() {
   const div = document.createElement('div');
+  const weatherDiv = document.createElement('div');
+  weatherDiv.id = 'weather-container';
   const btn = document.createElement('button');
   div.innerHTML = `<h1>Weather App</h1>`;
   div.classList.add('test');
@@ -13,6 +15,7 @@ function render() {
   btn.onclick = weatherData;
   div.appendChild(input);
   div.appendChild(btn);
+  div.appendChild(weatherDiv);
 
   return div;
 }

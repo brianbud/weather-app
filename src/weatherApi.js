@@ -10,10 +10,9 @@ export default async function getWeatherData() {
     }
 
     const data = await response.json();
+    const weatherContainer = document.querySelector('#weather-container');
 
-    console.log(data);
-    const div = document.createElement('div');
-    div.innerHTML = `
+    weatherContainer.innerHTML = `
     <div>
     <p>${data.current.condition['text']}</p>
     <p>${data.location.name}, ${data.location.region}</p>
@@ -24,7 +23,7 @@ export default async function getWeatherData() {
     <div>
   `;
 
-    document.body.appendChild(div);
+    document.body.appendChild(weatherContainer);
   } catch (error) {
     console.error('Error fetching data:', error.message);
   }
