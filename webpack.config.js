@@ -6,6 +6,7 @@ module.exports = {
     index: './src/index.js',
     weather: './src/weatherApi.js',
   },
+  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Weather App',
