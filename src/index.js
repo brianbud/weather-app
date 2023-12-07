@@ -3,6 +3,11 @@ import weatherData from './weatherApi.js';
 
 function render() {
   const div = document.createElement('div');
+  div.id = 'main-container';
+
+  const searchDiv = document.createElement('div');
+  searchDiv.id = 'searchDiv';
+
   const weatherDiv = document.createElement('div');
   weatherDiv.id = 'weather-container';
   const btn = document.createElement('button');
@@ -13,10 +18,11 @@ function render() {
   input.setAttribute('type', 'text');
   btn.innerHTML = 'search city';
   btn.onclick = weatherData;
-  div.appendChild(input);
-  div.appendChild(btn);
-  div.appendChild(weatherDiv);
+  searchDiv.appendChild(input);
+  searchDiv.appendChild(btn);
 
+  div.appendChild(searchDiv);
+  div.appendChild(weatherDiv);
   return div;
 }
 
